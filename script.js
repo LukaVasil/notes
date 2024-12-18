@@ -1,3 +1,16 @@
+const API_BASE_URL = "https://cs-api.pltw.org/ehsnotesthing/"; 
+
+async function fetchNotes() {
+    try {
+        const response = await fetch(`${API_BASE_URL}/notes`);
+        const notes = await response.json();
+        return notes;
+    } catch (error) {
+        console.error("Error fetching notes:", error);
+        return [];
+    }
+}
+
 function popup() {
 
     const popupContainer = document.createElement("div");
